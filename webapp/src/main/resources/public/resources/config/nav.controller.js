@@ -18,9 +18,9 @@
 
         function updateHtml()
         {
-            navVM.html = "ng-mouseover works: <span style='cursor: pointer' ng-mouseover=\"navVM.showItem('1.1.1.1')\")>1.1.1.1</span></br>" +
-                         "ng-click works: <span style='cursor: pointer' ng-click=\"navVM.showItem('2.2.2.2')\")>2.2.2.2</span></br>" +
-                         "ng-click works: <span style='cursor: pointer' ng-click=\"navVM.showItem('3.3.3.3')\")>3.3.3.3</span></br>";
+            navVM.html = "ng-mouseover works: <span style='cursor: pointer; text-decoration: underline' ng-mouseover=\"navVM.showItem('1.1.1.1')\")>1.1.1.1</span></br>" +
+                         "ng-click works: <span style='cursor: pointer; text-decoration: underline' ng-click=\"navVM.showItem('2.2.2.2')\")>2.2.2.2</span></br>" +
+                         "ng-click works: <span style='cursor: pointer; text-decoration: underline' ng-click=\"navVM.showItem('3.3.3.3')\")>3.3.3.3</span></br>";
 
         }
 

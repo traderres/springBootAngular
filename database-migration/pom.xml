@@ -52,9 +52,9 @@
 
                 <configuration>
                     <!-- Default values to use when running locally -->
-                    <user>app1_user</user>
-                    <password>secret</password>
-                    <url>jdbc:postgresql://localhost:5432/app1_db</url>
+                    <user>test</user>
+                    <password>test</password>
+                    <url>jdbc:postgresql://localhost:5432/test</url>
                 </configuration>
             </plugin>
 
