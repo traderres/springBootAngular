@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Main Page</title>
+
+    <!-- Load all CSS Files -->
+    <link rel="stylesheet" href="./resources/node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="./resources/node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.css">
+
+    <!-- Load all NPM JavaScript Dependencies -->
+    <script src="./resources/node_modules/angular/angular.js"></script>
+    <script src="./resources/node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="./resources/node_modules/angular-aria/angular-aria.js"></script>
+    <script src="./resources/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./resources/node_modules/angular-material/angular-material.js"></script>
+    <script src="./resources/node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.js"></script>
+
+    <!-- Load all Custom JavaScript files -->
+    <script src="./resources/config/app.js"></script>
+    <script src="./resources/config/nav.controller.js"></script>
+    <script src="./resources/config/routes.js"></script>
+
+    <style type="text/css">
+        .active {
+            color: red; font-weight: bold;
+        }
+    </style>
+</head>
+
+<body ng-controller="navController as navVM">
+
+
+
+<div layout="column">
+
+    <md-sidenav md-component-id="left" class="md-sidenav-left">
+        Left Nav!
+    </md-sidenav>
+
+    <md-content>
+
+        <h2>Main Page</h2>
+
+        <md-button ng-click="navVM.openLeftMenu()">
+            Open Left Menu
+        </md-button>
+    </md-content>
+
+    <md-sidenav  opened="true" disableClose="true" md-component-id="right" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-right">
+        <form>
+            <md-input-container style="border: 1px solid black">
+                <label for="testInput">Test input</label>
+                <input id="testInput" ng-model="data" md-autofocus type="text">
+            </md-input-container>
+        </form>
+    </md-sidenav>
+
+
+    <div layout="column" layout-fill>
+        <md-toolbar>
+
+            <div class="md-toolbar-tools">
+                <span>My App's Title</span>
+
+                <!-- fill up the space between left and right area -->
+                <span flex></span>
+
+                <md-button>
+                    Right Bar Button
+                </md-button>
+            </div>
+
+        </md-toolbar>
+        <md-content>
+            Hello!
+        </md-content>
+    </div>
+
+
+    <md-nav-bar md-selected-nav-item="currentNavItem">
+        <md-nav-item md-nav-sref="page1" name="page1">Page One</md-nav-item>
+        <md-nav-item md-nav-sref="page2" name="page2">Page Two</md-nav-item>
+        <md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>
+        <md-nav-item md-nav-sref="app.page4" sref-opts="{reload: true, notify: true}" name="page4">Page Four</md-nav-item>
+    </md-nav-bar>
+
+
+    <md-sidemenu>
+        <md-sidemenu-group>
+            <md-subheader class="md-no-sticky">Caption</md-subheader>
+
+            <md-sidemenu-content collapse-other="true" md-icon="home" md-heading="Menu 1" md-arrow="true">
+                <md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>
+                <md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>
+                <md-sidemenu-button href="#">Submenu 3</md-sidemenu-button>
+            </md-sidemenu-content>
+
+            <md-sidemenu-content md-heading="Menu 2" md-arrow="true" on-hover="true">
+                <md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>
+                <md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>
+
+                <md-sidemenu-content md-heading="Menu 2" md-arrow="true">
+                    <md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>
+                    <md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>
+                    <md-sidemenu-button href="#">Submenu 3</md-sidemenu-button>
+                </md-sidemenu-content>
+            </md-sidemenu-content>
+
+        </md-sidemenu-group>
+
+        <md-sidemenu-group>
+            <md-divider></md-divider>
+
+            <md-subheader class="md-no-sticky">Caption</md-subheader>
+
+            <md-sidemenu-button href="#">Menu 4</md-sidemenu-button>
+        </md-sidemenu-group>
+    </md-sidemenu>
+</div>
+
+
+<!--&lt;!&ndash; Right navigation bar &ndash;&gt;-->
+<!--<md-sidenav class="md-sidenav-right" md-component-id="right" md-whiteframe="4">-->
+    <!--<md-toolbar>-->
+        <!--<div class="md-toolbar-tools">-->
+            <!--<h2 flex md-truncate>Right Bar</h2>-->
+            <!--<md-button class="md-icon-button" aria-label="Close"></md-button>-->
+        <!--</div>-->
+    <!--</md-toolbar>-->
+<!--</md-sidenav>-->
+
+
+<div>
+    <h2>View Port</h2>
+    <!-- The angular ui-sref directive binds a link tag to a state.                              -->
+    <!-- If the state has a URL, the directive will generate the href attribute for you -->
+    <a title="View page 1" ui-sref-active="active" ui-sref="page1">Page1</a> <br/>
+    <a title="view page 2" ui-sref-active="active" ui-sref="page2">Page2</a>
+</div>
+<br/>
+
+
+<ui-view>
+    <!-- The ui-router needs this to make it work -->
+</ui-view>
+
+</body>
+</html>

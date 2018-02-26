@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Main Page</title>
+
+    <!-- Load all CSS Files -->
+    <link rel="stylesheet" href="./resources/node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="./resources/node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.css">
+
+    <!-- Load all NPM JavaScript Dependencies -->
+    <script src="./resources/node_modules/angular/angular.js"></script>
+    <script src="./resources/node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="./resources/node_modules/angular-aria/angular-aria.js"></script>
+    <script src="./resources/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./resources/node_modules/angular-material/angular-material.js"></script>
+    <script src="./resources/node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.js"></script>
+
+    <!-- Load all Custom JavaScript files -->
+    <script src="./resources/config/app.js"></script>
+    <script src="./resources/config/nav.controller.js"></script>
+    <script src="./resources/config/routes.js"></script>
+
+    <style type="text/css">
+        .active {
+            color: red; font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div ng-controller="navController as navVM" layout="vertical" layout-fill>
+    <md-toolbar>
+        <div class="md-toolbar-tools" ng-click="navVM.toggleMenu()">
+            <button class="menu-icon" hide-sm aria-label="Toggle Menu">
+                Hide
+            </button>
+            <h2>
+                <span>Dev.Material</span>
+            </h2>
+        </div>
+    </md-toolbar>
+
+    <section layout="horizontal" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" component-id="menu" is-locked-open="true">
+
+            <md-toolbar>
+                <h1 class="md-toolbar-tools">Sidenav Left</h1>
+            </md-toolbar>
+
+            <md-content class="md-padding">
+                <p>
+                    This sidenav is locked open on your device
+                </p>
+            </md-content>
+        </md-sidenav>
+
+        <md-content flex class="md-padding">
+            Some content!!
+        </md-content>
+    </section>
+</div>
+
+
+<ui-view>
+    <!-- The ui-router needs this to make it work -->
+</ui-view>
+
+</body>
+</html>

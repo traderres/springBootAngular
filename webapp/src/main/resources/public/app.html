@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Main Page</title>
+
+    <!-- Load all CSS Files -->
+    <link rel="stylesheet" href="./resources/node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="./resources/node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.css">
+
+    <!-- Load all NPM JavaScript Dependencies -->
+    <script src="./resources/node_modules/angular/angular.js"></script>
+    <script src="./resources/node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="./resources/node_modules/angular-aria/angular-aria.js"></script>
+    <script src="./resources/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./resources/node_modules/angular-material/angular-material.js"></script>
+    <script src="./resources/node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.js"></script>
+    <script src="./resources/node_modules/angular-sanitize/angular-sanitize.js"></script>
+
+    <!-- Load all Custom JavaScript files -->
+    <script src="./resources/config/app.js"></script>
+    <script src="./resources/config/nav.controller.js"></script>
+    <script src="./resources/config/routes.js"></script>
+    <script src="./resources/node_modules/material-design-icons/iconfont/material-icons.css"></script>
+
+    <style type="text/css">
+        .active {
+            color: red; font-weight: bold;
+        }
+
+        #vericalToolBar {
+            background-color: rgb(1,74,182);
+            width: 50px;
+        }
+
+        #vericalToolBar md-icon {
+            color: rgba(255,255,255,0.87);
+        }
+
+        #toolBarTitle {
+            writing-mode: tb-rl;
+            color: rgba(255,255,255,0.87);
+        }
+
+    </style>
+</head>
+
+<body ng-controller="navController as navVM">
+    <!--<div ng-cloak="" layout-fill layout="column">-->
+        <!--<md-content flex layout="column">-->
+            <!--<md-whiteframe id="vericalToolBar" class="md-whiteframe-8dp" layout="column" layout-align="start center" flex>-->
+                <!--<md-button class="md-icon-button" aria-label="More">-->
+                    <!--Button 1-->
+                    <!--<md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>-->
+                <!--</md-button>-->
+                <!--<md-button class="md-icon-button" aria-label="Favorite">-->
+                    <!--Button 2-->
+                    <!--<md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>-->
+                <!--</md-button>-->
+                <!--<p id="toolBarTitle" class="md-title">My vertical toolbar</p>-->
+                <!--<span flex></span>-->
+                <!--<md-button class="md-icon-button" aria-label="Favorite">-->
+                    <!--Button #-->
+                    <!--<md-icon md-svg-icon="img/icons/cake.svg"></md-icon>-->
+                <!--</md-button>-->
+            <!--</md-whiteframe>-->
+        <!--</md-content>-->
+    <!--</div>-->
+
+<!--<md-sidenav id="sideNav" md-component-id="left"  class="md-sidenav-left md-whiteframe-z1 md-locked-open " layout="column" md-disable-backdrop >-->
+    <!--<md-content>-->
+        <!--<md-list>-->
+            <!--<md-list-item md-ink-ripple >-->
+                <!--<i class="material-icons">dashboard</i><div>Dashboard</div>-->
+            <!--</md-list-item >-->
+        <!--</md-list>-->
+        <!--</div>-->
+        <!--</div>-->
+    <!--</md-content>-->
+<!--</md-sidenav>-->
+
+<!--<md-toolbar>-->
+    <!--<div class="md-toolbar-tools">-->
+        <!--<h2>-->
+            <!--<span>Heading</span>-->
+        <!--</h2>-->
+
+        <!--&lt;!&ndash; Use up space in the middle &ndash;&gt;-->
+        <!--<span flex></span>-->
+
+        <!--<md-button class="md-icon-button" aria-label="User">-->
+            <!--User-->
+        <!--</md-button>-->
+    <!--</div>-->
+<!--</md-toolbar>-->
+
+<!--<md-list>-->
+    <!--<md-subheader class="md-no-sticky">Favorites</md-subheader>-->
+    <!--<md-list-item>-->
+        <!--<md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>-->
+        <!--<p>Messages</p>-->
+        <!--<div class="md-secondary">2</div>-->
+    <!--</md-list-item>-->
+    <!--<md-list-item>-->
+        <!--<md-icon class="md-default-theme" class="material-icons">&#xE878;</md-icon>-->
+        <!--<p>Events</p>-->
+        <!--<md-icon class="md-secondary">2</md-icon>-->
+    <!--</md-list-item>-->
+    <!--<md-list-item>-->
+        <!--<md-icon class="md-default-theme" class="material-icons">&#xE251;</md-icon>-->
+        <!--<p>Photos</p>-->
+        <!--<md-icon class="md-secondary">2</md-icon>-->
+    <!--</md-list-item>-->
+    <!--<md-divider></md-divider>-->
+    <!--<md-subheader class="md-no-sticky">Pages</md-subheader>-->
+    <!--<md-list-item>-->
+        <!--<md-icon class="md-default-theme" class="material-icons">&#xE7F9;</md-icon>-->
+        <!--<p>Pages Feed</p>-->
+        <!--<div class="md-secondary">2</div>-->
+    <!--</md-list-item>-->
+    <!--<md-list-item>-->
+        <!--<md-icon class="md-default-theme" class="material-icons">&#xE1BC;</md-icon>-->
+        <!--<p>Like Pages</p>-->
+        <!--<div class="md-secondary">20+</div>-->
+    <!--</md-list-item>-->
+<!--</md-list>-->
+
+<!--<md-toolbar>-->
+
+<!--<div class="md-toolbar-tools">-->
+<!--<span>My App's Title</span>-->
+
+<!--&lt;!&ndash; fill up the space between left and right area &ndash;&gt;-->
+<!--<span flex></span>-->
+
+<!--<md-button>-->
+<!--Right Bar Button-->
+<!--</md-button>-->
+<!--</div>-->
+
+<!--</md-toolbar>-->
+<!--<md-content>-->
+<!--Hello!-->
+<!--</md-content>-->
+
+<!--<div class="md-toolbar-tools">-->
+    <!--<md-button class="md-icon-button" aria-label="Icon">-->
+        <!--<md-icon="home">-->
+    <!--</md-button>-->
+    <!--<h2>-->
+        <!--<span>Heading</span>-->
+    <!--</h2>-->
+<!--</div>-->
+
+
+<!--<md-sidenav class="md-sidenav-left md-whiteframe-z2"-->
+            <!--md-component-id="left">-->
+    <!--<md-toolbar layout="row">-->
+        <!--<div class="md-toolbar-tools">-->
+            <!--<h2>-->
+                <!--<span>Side Panel</span>-->
+            <!--</h2>-->
+            <!--<span flex></span>-->
+            <!--<md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="ctrl.closeSideNavPanel()">-->
+                <!--<md-tooltip>Close Side Panel</md-tooltip>-->
+                <!--<md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>-->
+            <!--</md-button>-->
+        <!--</div>-->
+    <!--</md-toolbar>-->
+    <!--<md-content layout-padding="">-->
+        <!--Side navigation Panel-->
+    <!--</md-content>-->
+<!--</md-sidenav>-->
+
+<!--<div layout="column">-->
+
+    <!--<md-sidenav md-component-id="left" class="md-sidenav-left">-->
+        <!--Left Nav!-->
+    <!--</md-sidenav>-->
+
+    <!--<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" opened="true" disableClose="true"-->
+                <!--is-locked-open="true" flex>-->
+        <!--Left Nav!-->
+    <!--</md-sidenav>-->
+
+    <!--<md-content>-->
+
+        <!--<h2>Main Page</h2>-->
+
+        <!--<md-button ng-click="navVM.openLeftMenu()">-->
+            <!--Open Left Menu-->
+        <!--</md-button>-->
+    <!--</md-content>-->
+
+<!--<md-content>-->
+
+        <!--<h2>Main Page</h2>-->
+
+        <!--<md-button ng-click="navVM.openLeftMenu()">-->
+            <!--Open Left Menu-->
+        <!--</md-button>-->
+    <!--</md-content>-->
+
+    <!--<md-sidenav  opened="true" disableClose="true" md-component-id="right" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-right">-->
+        <!--<form>-->
+            <!--<md-input-container style="border: 1px solid black">-->
+                <!--<label for="testInput">Test input</label>-->
+                <!--<input id="testInput" ng-model="data" md-autofocus type="text">-->
+            <!--</md-input-container>-->
+        <!--</form>-->
+    <!--</md-sidenav>-->
+
+
+    <div layout="column" layout-fill>
+        <md-toolbar>
+
+            <div class="md-toolbar-tools">
+                <span>My App's Title</span>
+
+                <!-- fill up the space between left and right area -->
+                <span flex></span>
+
+                <md-button ng-click="navVM.clearHtml()">
+                    Clear HTML
+                </md-button>
+
+                <md-button ng-click="navVM.updateHtml()">
+                    Update HTML
+                </md-button>
+            </div>
+
+        </md-toolbar>
+        <md-content>
+
+            <!-- Use the bind-html-compile to compile code within the HTML -->
+            <div bind-html-compile="navVM.html" style="border: 1px solid black">
+                    <!-- ng-click and ng-mouseover events will work here -->
+            </div>
+
+            <div>
+                <p>{{navVM.status}}</p>
+            </div>
+        </md-content>
+    </div>
+
+        <!--<md-nav-bar md-selected-nav-item="currentNavItem">-->
+            <!--<md-nav-item md-nav-sref="page1" name="page1">Page One</md-nav-item>-->
+            <!--<md-nav-item md-nav-sref="page2" name="page2">Page Two</md-nav-item>-->
+            <!--<md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>-->
+            <!--<md-nav-item md-nav-sref="app.page4" sref-opts="{reload: true, notify: true}" name="page4">Page Four</md-nav-item>-->
+        <!--</md-nav-bar>-->
+
+    <!--<md-sidemenu opened="true" disableClose="true" md-component-id="left" class="md-sidenav-left">-->
+
+        <!--<md-sidemenu-group>-->
+            <!--<md-subheader class="md-no-sticky">Caption</md-subheader>-->
+
+            <!--<md-sidemenu-content collapse-other="true" md-icon="home" md-heading="Menu 1" md-arrow="true">-->
+                <!--<md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>-->
+                <!--<md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>-->
+                <!--<md-sidemenu-button href="#">Submenu 3</md-sidemenu-button>-->
+            <!--</md-sidemenu-content>-->
+
+            <!--<md-sidemenu-content md-heading="Menu 2" md-arrow="true" on-hover="true">-->
+                <!--<md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>-->
+                <!--<md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>-->
+
+                <!--<md-sidemenu-content md-heading="Menu 2" md-arrow="true">-->
+                    <!--<md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>-->
+                    <!--<md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>-->
+                    <!--<md-sidemenu-button href="#">Submenu 3</md-sidemenu-button>-->
+                <!--</md-sidemenu-content>-->
+            <!--</md-sidemenu-content>-->
+
+        <!--</md-sidemenu-group>-->
+
+        <!--<md-sidemenu-group>-->
+            <!--<md-divider></md-divider>-->
+
+            <!--<md-subheader class="md-no-sticky">Caption</md-subheader>-->
+
+            <!--<md-sidemenu-button href="#">Menu 4</md-sidemenu-button>-->
+        <!--</md-sidemenu-group>-->
+    <!--</md-sidemenu>-->
+
+
+<!--</div>-->
+
+
+<!--&lt;!&ndash; Right navigation bar &ndash;&gt;-->
+<!--<md-sidenav class="md-sidenav-right" md-component-id="right" md-whiteframe="4">-->
+<!--<md-toolbar>-->
+<!--<div class="md-toolbar-tools">-->
+<!--<h2 flex md-truncate>Right Bar</h2>-->
+<!--<md-button class="md-icon-button" aria-label="Close"></md-button>-->
+<!--</div>-->
+<!--</md-toolbar>-->
+<!--</md-sidenav>-->
+
+
+<div>
+    <h2>View Port</h2>
+    <!-- The angular ui-sref directive binds a link tag to a state.                              -->
+    <!-- If the state has a URL, the directive will generate the href attribute for you -->
+    <a title="View page 1" ui-sref-active="active" ui-sref="page1">Page1</a> <br/>
+    <a title="view page 2" ui-sref-active="active" ui-sref="page2">Page2</a>
+</div>
+<br/>
+
+
+<!--<ui-view>-->
+    <!--&lt;!&ndash; The ui-router needs this to make it work &ndash;&gt;-->
+<!--</ui-view>-->
+
+</body>
+</html>
